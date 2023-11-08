@@ -1,48 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, Image } from 'react-native';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  button: {
-    backgroundColor: 'lightblue',
-    borderRadius: 50,
-    padding: 10,
-    marginBottom: 10,
-    width: 200,
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: 'black',
-  },
-  counter: {
-    color: 'black',
-    marginTop: 5,
-  },
-  infoText: {
-    color: 'black',
-    marginBottom: 10,
-  },
-  infoIcon: {
-    width: 30,
-    height: 30,
-  },
-  modalContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  modalContent: {
-    backgroundColor: 'white',
-    padding: 20,
-    borderRadius: 10,
-    width: 300,
-    alignItems: 'center',
-  },
-});
+import { styles } from './BotonsScreenStyle'; 
 
 export default function MyScreen() {
   const [waterCount, setWaterCount] = useState(0);
@@ -63,14 +22,18 @@ export default function MyScreen() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => setWaterCount(waterCount + 1)}
-      >
-        <Text style={styles.buttonText}>Copos de Água</Text>
-      </TouchableOpacity>
-      <Text style={styles.counter}>{waterCount} copos consumidos</Text>
-      <Text style={styles.infoText}>Um copo possui {averageCupSize} mL</Text>
+
+      <View style={styles.buttonContainer}> 
+        <Text style={styles.counter}>{waterCount}{'\n'}Copos consumidos</Text>
+        <TouchableOpacity
+          style={[styles.button, styles.firstButton]}
+          onPress={() => setWaterCount(waterCount + 1)}
+        >
+          <Text style={styles.buttonText}>Copos de Água</Text>
+        </TouchableOpacity>
+        <Text style={styles.infoText}>Um copo possui{'\n'}{averageCupSize} mL</Text>
+      </View>
+      
 
       <TouchableOpacity
         style={styles.button}

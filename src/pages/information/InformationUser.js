@@ -141,13 +141,13 @@ export default function InformationUser(){
                 </View>
 
             </View>
-            <TouchableOpacity onPress={navigateToTest}>
+            <TouchableOpacity onPress={navigateToNext}>
                 <Text style={styles.buttonTest}>Não sabe informar? Participe do teste durante 7 dias!</Text>
             </TouchableOpacity>
 
             {waterCups && bathroomVisits && (involuntaryUrination !== null) && weight && height && (
                 <TouchableOpacity onPress={navigateToNext}>
-                    <Text onPress={navigateToNext} style={styles.buttonTest}>Continuar</Text>
+                    <Text style={styles.buttonTest}>Continuar</Text>
                 </TouchableOpacity>
             )}
         </View>
